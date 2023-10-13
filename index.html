@@ -3,75 +3,149 @@
 
 <head>
     <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,500&display=swap"
+        rel="stylesheet"> -->
     <style>
-        .title{
+        * {
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* font-family: 'Open Sans', sans-serif; */
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffedca;
+            justify-content: space-between;
+        }
+
+        a{
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 10px;
+        }
+
+        .title {
             margin-bottom: 10px;
+            font-size: 16px;
+            /* text-align: center; */
+            /* display: flex; */
             text-align: center;
             width: 210px;
             color: blue;
             border: 2px solid rgba(0, 0, 0, 0.853, 255);
         }
 
-        input[type="button"]{
-            background-color: black;
+        input[type="button"] {
+            background-color: rgba(183, 183, 183, 0.537);
             color: white;
             border: 2px solid black;
-            width: 100%;
+            width: 50px;
+            height: 50px;
+            outline: none;
+            border-radius: 100px;
+            /* margin: 5px; */
+            margin: 5px;
+            text-align: center;
+            justify-content: center;
+            vertical-align: middle;
         }
 
-        input[type="text"]{
-            background-color: #fff;
+        input[type="text"] {
+            background-color: rgb(96, 96, 96);
+            outline: none;
             border: 2px solid black;
-            width: 100%;
+            width: 164px;
+            height: 50px;
+            border-radius: 10px;
+            border: 5px solid rgba(128, 128, 128, 0);
+            margin: 5px;
+            user-select: text;
+            color: aliceblue;
+            text-align: right;
+            overflow-x:visible;
+            /* overflow: auto;  */
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        #org {
+            background-color: hsl(38, 100%, 60%);
+        }
+
+        input[type="button"]:hover {
+            background-color: hsl(38, 66%, 33%);
+            transition-duration: 0.5s;
+            /* transition-duration: 0.5s; */
+        }
+
+        table {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: black;
+            align-self: center;
+            top: 50%;
+            /* left: 50%; */
+            transform: translateY(50%);
         }
     </style>
 </head>
 
 <body>
-    <div class="title">
-        Great Learning Calculator.
-    </div>
+    <!-- <div class="title"> -->
+<p>Great Learning Calculator.<br /> designed and built by <a href="https://github.com/ChandanKumarSrinivas">Chandan Kumar S</a></p>
+    <!-- </div>  -->
     <table>
         <tr>
-            <td colspan="3"><input type="text" id="result"></td>
-            <td><input type="button" value="c" onclick="clr()"></td>
+            <td colspan="3"><input type="text" id="result" disabled></td>
+            <td><input type="button" value="C" id="org" onclick="clr()"></td>
         </tr>
         <tr>
             <td><input type="button" value="1" onclick="display('1')"></td>
             <td><input type="button" value="2" onclick="display('2')"></td>
             <td><input type="button" value="3" onclick="display('3')"></td>
-            <td><input type="button" value="/" onclick="display('/')"></td>
+            <td><input type="button" value="/" id="org" onclick="display('/')"></td>
         </tr>
         <tr>
             <td><input type="button" value="4" onclick="display('4')"></td>
             <td><input type="button" value="5" onclick="display('5')"></td>
             <td><input type="button" value="6" onclick="display('6')"></td>
-            <td><input type="button" value="-" onclick="display('-')"></td>
+            <td><input type="button" value="-" id="org" onclick="display('-')"></td>
         </tr>
         <tr>
             <td><input type="button" value="7" onclick="display('7')"></td>
             <td><input type="button" value="8" onclick="display('8')"></td>
             <td><input type="button" value="9" onclick="display('9')"></td>
-            <td><input type="button" value="+" onclick="display('+')"></td>
+            <td><input type="button" value="+" id="org" onclick="display('+')"></td>
         </tr>
         <tr>
-            <td><input type="button" value="." onclick="display('.')"></td>
+            <td><input type="button" value="&#183;" onclick="display('.')"></td>
             <td><input type="button" value="0" onclick="display('0')"></td>
-            <td><input type="button" value="=" onclick="equate()"></td>
-            <td><input type="button" value="*" onclick="display('*')"></td>
+            <td><input type="button" value="=" id="org" onclick="equate()"></td>
+            <td><input type="button" value="*" id="org" onclick="display('*')"></td>
         </tr>
     </table>
     <script>
         function clr() {
-            document.getElementById("result").value="";
+            document.getElementById("result").value = "";
         }
         function display(val) {
-            document.getElementById("result").value+=val;
+            document.getElementById("result").value += val;
         }
         function equate() {
-            let x=document.getElementById("result").value;
-            y=eval(x);
-            document.getElementById("result").value=y;
+            let x = document.getElementById("result").value;
+            y = eval(x);
+            document.getElementById("result").value = y;
         }
     </script>
 </body>
