@@ -18,11 +18,14 @@
         }
 
         body {
-            display: flex;
-            flex-direction: column;
+            /* display: flex; */
+            /* flex-direction: column; */
             background-color: #ffedca;
             /* justify-content: space-between; */
-            gap: 0px;
+            /* gap: 10px; */
+            /* box-sizing: border-box; */
+            height: 100%;
+            padding: auto;
         }
 
         a{
@@ -95,38 +98,37 @@
             border-radius: 25px;
             background-color: black;
             align-self: center;
-            top: 50%;
+            margin: auto;
             /* left: 50%; */
-            transform: translateY(50%);
+            /* transform: translateY(50%); */
         }
     </style>
 </head>
 
 <body>
     <!-- <div class="title"> -->
-<p>Great Learning Calculator.<br /> designed and built by <a href="https://github.com/ChandanKumarSrinivas">Chandan Kumar S</a></p>
-    <!-- </div>  -->
-    <table>
-        <tr>
-            <td colspan="3"><input type="text" id="result" disabled></td>
-            <td><input type="button" value="C" id="org" onclick="clr()"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="1" onclick="display('1')"></td>
-            <td><input type="button" value="2" onclick="display('2')"></td>
-            <td><input type="button" value="3" onclick="display('3')"></td>
-            <td><input type="button" value="/" id="org" onclick="display('/')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="4" onclick="display('4')"></td>
-            <td><input type="button" value="5" onclick="display('5')"></td>
-            <td><input type="button" value="6" onclick="display('6')"></td>
-            <td><input type="button" value="-" id="org" onclick="display('-')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="7" onclick="display('7')"></td>
-            <td><input type="button" value="8" onclick="display('8')"></td>
-            <td><input type="button" value="9" onclick="display('9')"></td>
+        <!-- </div>  -->
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="result" disabled></td>
+                <td><input type="button" value="C" id="org" onclick="clr()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')"></td>
+                <td><input type="button" value="2" onclick="display('2')"></td>
+                <td><input type="button" value="3" onclick="display('3')"></td>
+                <td><input type="button" value="/" id="org" onclick="display('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')"></td>
+                <td><input type="button" value="5" onclick="display('5')"></td>
+                <td><input type="button" value="6" onclick="display('6')"></td>
+                <td><input type="button" value="-" id="org" onclick="display('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')"></td>
+                <td><input type="button" value="8" onclick="display('8')"></td>
+                <td><input type="button" value="9" onclick="display('9')"></td>
             <td><input type="button" value="+" id="org" onclick="display('+')"></td>
         </tr>
         <tr>
@@ -148,7 +150,8 @@
             y = eval(x);
             document.getElementById("result").value = y;
         }
-    </script>
+        </script>
+<p>Great Learning Calculator.<br /> designed and built by <a href="https://github.com/ChandanKumarSrinivas">Chandan Kumar S</a></p>
 </body>
 
 </html>
